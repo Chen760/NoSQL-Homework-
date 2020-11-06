@@ -1,4 +1,4 @@
-import MakeLeetCodeClass.TreeNode;
+package AllPath;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -27,12 +27,14 @@ public class AllPath {
     }
 
     public static void main(String[] args){
-        String str = "[3,9,20,null,null,15,7]";
+        String str = "[3,15,5,13,null,12,5]";
         TreeNode node = TreeNode.mkTree(str);
+        System.out.println("AllPath:");
         Iterator it = binaryTreePaths(node).iterator();
         while (it.hasNext()){
             System.out.println(it.next());
         }
     }
 }
+
 

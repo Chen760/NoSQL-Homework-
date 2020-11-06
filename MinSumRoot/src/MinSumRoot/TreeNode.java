@@ -1,4 +1,4 @@
-package MakeLeetCodeClass;
+package MinSumRoot;
 
 public class TreeNode {
     public int val;
@@ -48,3 +48,4 @@ public class TreeNode {
         return nodes[1];
     }
 }
+

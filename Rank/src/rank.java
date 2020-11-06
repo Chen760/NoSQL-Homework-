@@ -34,6 +34,8 @@ public class rank{
     public static void main(String[] args){
         String[] input = new String[]{"r","r","b","g","b","r","g"};
         System.out.println(Arrays.toString(reRank(input)));
+        input = new String[]{"g","b","b","g","b","r","r"};
+        System.out.println(Arrays.toString(reRank(input)));
     }
 
 }

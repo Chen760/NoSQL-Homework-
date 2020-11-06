@@ -1,5 +1,4 @@
-import MakeLeetCodeClass.TreeNode;
-
+package MinSumRoot;
 
 public class MinSumRoot {
     private static int minSum;
@@ -25,8 +24,8 @@ public class MinSumRoot {
         return sum;
     }
     public static void main(String[] args){
-        String str = "[3,9,20,null,null,15,7]";
+        String str = "[3,15,5,13,null,12,5]";
         TreeNode node = TreeNode.mkTree(str);
-        System.out.println(findSubtree(node));
+        System.out.println("minRoot: "+findSubtree(node));
     }
 }
