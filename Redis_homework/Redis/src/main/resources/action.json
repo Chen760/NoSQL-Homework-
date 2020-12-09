@@ -1,0 +1,80 @@
+{
+  "action":[
+    {
+      "name": "INCR_NUM",
+      "retrieve":[
+        {
+          "counterName": "showUserNum"
+        }
+        ]
+      ,
+      "save":[
+        {
+          "counterName": "incrUserNum"
+        }
+        ]
+    },
+    {
+      "name": "DECR_NUM",
+      "retrieve":[
+        {
+          "counterName": "showUserNum"
+        }
+      ]
+    ,
+      "save":[
+        {
+          "counterName": "decrUserNum"
+        }
+      ]
+    },
+    {
+      "name": "SHOW_NUM",
+      "retrieve":[
+        {
+          "counterName": "showUserNum"
+        }
+      ]
+    ,
+      "save":[]
+    },
+    {
+      "name": "INCR_FREQ",
+      "retrieve":[
+        {
+          "counterName": "showUserFreq"
+        }
+      ]
+    ,
+      "save":[
+        {
+          "counterName": "incrUserFreq"
+        }
+      ]
+    },
+    {
+      "name": "DECR_FREQ",
+      "retrieve":[
+        {
+          "counterName": "showUserFreq"
+        }
+      ]
+    ,
+      "save":[
+        {
+          "counterName": "decrUserFreq"
+        }
+      ]
+    },
+    {
+      "name": "SHOW_FREQ",
+      "retrieve":[
+        {
+          "counterName": "showUserFreq"
+        }
+      ]
+    ,
+      "save":[]
+    }
+    ]
+}

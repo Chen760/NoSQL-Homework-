@@ -1,0 +1,47 @@
+{
+  "Counter": [
+    {
+      "counterName": "incrUserNum",
+      "counterIndex": "0",
+      "type": "num",
+      "keyFields": "User_num",
+      "valueFields": "2"
+    },
+    {
+      "counterName": "decrUserNum",
+      "counterIndex": "1",
+      "type": "num",
+      "keyFields": "User_num",
+      "valueFields": "1"
+    },
+    {
+      "counterName": "showUserNum",
+      "counterIndex": "3",
+      "type": "num",
+      "keyFields": "User_num"
+    },
+    {
+      "counterName": "incrUserFreq",
+      "counterIndex": "4",
+      "type": "freq",
+      "keyFields": "User_freq",
+      "valueFields": "1",
+      "timeFields": "202012061200 202012061700"
+    },
+    {
+      "counterName": "decrUserFreq",
+      "counterIndex": "5",
+      "type": "freq",
+      "keyFields": "User_freq",
+      "valueFields": "1",
+      "timeFields": "202012061522"
+    },
+    {
+      "counterName": "showUserFreq",
+      "counterIndex": "6",
+      "type": "freq",
+      "keyFields": "User_freq",
+      "timeFields": "202012061200 202012061700"
+    }
+  ]
+}
