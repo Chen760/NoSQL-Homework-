@@ -11,6 +11,7 @@ public class UseCounter {
     private ArrayList<Action> action=null;
     private ArrayList<Counter> counter=null;
     private String action_name;
+    private Long sum;;
     
 
     public UseCounter(JsonRead jsonRead, String action_name){
@@ -88,20 +89,24 @@ public class UseCounter {
             start_time = counter.getStart_time();
             end_time = counter.getEnd_time();
             if (datefreq.T_Compare(start_time, end_time)) {
+                sum= Long.valueOf(0);
                 switch (countername) {
                 case "incrUserNum":
                     lo = Long.valueOf(valueFields);
                     System.out.print("提高了" + valueFields + " 当前" + KeyFields + "的值为---->");
                     count_incr(KeyFields, lo, type, timeFields);
+                    System.out.println("");
                     break;
                 case "decrUserNum":
                     lo = Long.valueOf(valueFields);
                     System.out.print("降低了" + valueFields + " 当前" + KeyFields + "的值为---->");
                     count_decr(KeyFields, lo, type, timeFields);
+                    System.out.println("");
                     break;
                 case "showUserNum":
                     System.out.print("当前" + KeyFields + "的值为--->");
                     show(KeyFields, type, timeFields);
+                    System.out.println("");
                     break;
                 case "showUserFreq":
                     date = datefreq.getStr_date(start_time);
@@ -114,6 +119,8 @@ public class UseCounter {
                         date = datefreq.getNext_date(date);
                     }
                     show(KeyFields, type, end_date);
+                    System.out.println("在"+ "\"" +start_time+ "\"" +"和"+ "\"" +end_time+ "\"" +"区间目前总计"+sum);
+                    System.out.println("");
                     break;
                 case "decrUserFreq":
                     lo = Long.valueOf(valueFields);
@@ -123,11 +130,15 @@ public class UseCounter {
                     if (end_date == null) break;
                     System.out.println("在" + "\"" + timeFields + "\"" + "降低了" + valueFields);
                     System.out.println("当前" + KeyFields + "在" + "\"" + timeFields + "\"" + "的值为:");
+                    sum += lo;
                     while (!end_date.equals(date)) {
                         count_decr(KeyFields, lo, type, date);
                         date = datefreq.getNext_date(date);
+                        sum += lo;
                     }
                     count_decr(KeyFields, lo, type, end_date);
+                    System.out.println("在"+ "\"" +start_time+ "\"" +"和"+ "\"" +end_time+ "\"" +"区间总共改变了"+sum);
+                    System.out.println("");
                     break;
                 case "incrUserFreq":
                     lo = Long.valueOf(valueFields);
@@ -137,14 +148,18 @@ public class UseCounter {
                     if (end_date == null) break;
                     System.out.println("在" + "\"" + timeFields + "\"" + "提高了" + valueFields);
                     System.out.println("当前" + KeyFields + "在" + "\"" + timeFields + "\"" + "的值为:");
+                    sum += lo;
                     while (!end_date.equals(date)) {
                         count_incr(KeyFields, lo, type, date);
                         date = datefreq.getNext_date(date);
+                        sum += lo;
                     }
                     count_incr(KeyFields, lo, type, end_date);
+                    System.out.println("在"+ "\"" +start_time+ "\"" +"和"+ "\"" +end_time+ "\"" +"区间总共改变了"+sum);
+                    System.out.println("");
                     break;
                 default:
-                    System.out.print("不存在指定的Counter");
+                    System.out.println("不存在指定的Counter");
 
             }
              }else System.out.println("***请保证起始时间小于终止时间***");
@@ -187,7 +202,8 @@ public class UseCounter {
                 jedisDef.get(k);
                 break;
             case "freq":
-                jedisDef.hget(k,f);
+                long lo = Long.valueOf(jedisDef.hget(k, f));
+                sum += lo;
                 break;
             default:
                 System.err.println("未知counter类型");

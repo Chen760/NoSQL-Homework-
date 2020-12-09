@@ -26,7 +26,7 @@
       "type": "freq",
       "keyFields": "User_freq",
       "valueFields": "1",
-      "timeFields": "202012061200 202012061700"
+      "timeFields": "202012061200 202012061800"
     },
     {
       "counterName": "decrUserFreq",
